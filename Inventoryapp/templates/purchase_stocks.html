@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card" style="padding-top:50px">
+    <h1 style="padding-top:50px;padding-left:20px"><b>Supplier Details</b></h1>
+    <div class="card-body">
+        <form method="post" action="{% url 'savepurchasefn' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="form-label">Select supplier</label><br>
+            <select class="form-control" id="supplierSelect" onchange="populateSupplierDetails()" name="suppliername" style="width:400px">
+                <option>........</option>
+                {% for i in data %}
+                    {% if i.id %}
+                        <option value="{{ i.id }}" data-phone="{{ i.s_mobileno }}" data-email="{{ i.s_gstin }}">{{ i.s_name }} (ID: {{ i.id }})</option>
+                    {% else %}
+                        <option>Invalid Supplier Data</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="suppliermobileno" style="width:500px">
+            </div>
+            <div class="mb-3" style="margin-left:520px;margin-top:-84px">
+                <label class="form-label">GSTIN</label>
+                <input type="text" class="form-control" id="email" name="suppliergstin" style="width:500px" pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" title="Invalid GST number.">
+            </div>
+            <h1><b>Stock Details</b></h1>
+            <label class="form-label">Stock</label>
+            <label style="margin-left:480px" class="form-label">Price Per Quantity</label>
+            <label style="margin-left:75px" class="form-label">Quantity</label>
+            <label style="margin-left:135px" class="form-label">Total Price</label>
+            <select class="form-control" name="stock" style="width:500px">
+                <option>........</option>
+                {% for stock in sdata %}
+                    <option value="{{ stock.id }}">{{ stock.stockname }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" class="form-control" id="price" name="stockprice" style="width:180px;margin-left:520px;margin-top:-38px">
+            <input type="number" class="form-control" id="qty" name="stockquantity" style="width:180px;margin-left:720px;margin-top:-38px">
+            <input type="text" class="form-control" id="total" value="" name="totalprice" style="width:180px;margin-left:920px;margin-top:-38px"><br><br>
+            <div style="text-align:center">
+                <button type="submit" class="btn btn-success">Save</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

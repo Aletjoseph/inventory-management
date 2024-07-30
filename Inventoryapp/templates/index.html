@@ -1,0 +1,377 @@
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modernize Free</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/inlineblock.css' %}" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a href="./index.html" class="text-nowrap logo-img">
+            <img src="../assets/images/logos/dark-logo.svg" width="180" alt="" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <h1 style="text"><b>INVENTORY</b></h1>
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Home</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'indexfn' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">SUPPLIERS</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'addsupplierfn'  %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-article"></i>
+                </span>
+                <span class="hide-menu">Add Suppliers</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'viewsupplierfn' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-alert-circle"></i>
+                </span>
+                <span class="hide-menu">View Suppliers</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">PURCHASES</span>
+            </li>
+
+
+<li class="sidebar-item">
+  <a class="sidebar-link" href="{% url 'purchasestocksfn' %}" aria-expanded="false">
+    <span>
+      <i class="ti ti-cards"></i>
+    </span>
+    <span class="hide-menu">Purchase New Stocks</span>
+  </a>
+</li>
+
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'purchaselistfn' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-file-description"></i>
+                </span>
+                <span class="hide-menu">Purchases List</span>
+              </a>
+            </li>
+
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">STOCKS</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'inventorylistfn' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                <span class="hide-menu">Inventory List</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'addstocksfn' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-user-plus"></i>
+                </span>
+                <span class="hide-menu">Add Stocks</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Sales</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'salesfn' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-mood-happy"></i>
+                </span>
+                <span class="hide-menu">New Sales</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{% url 'saleslistfn' %}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-aperture"></i>
+                </span>
+                <span class="hide-menu">Sales List</span>
+              </a>
+            </li>
+          </ul>
+          <div class="unlimited-access hide-menu  position-relative mb-7 mt-5 rounded">
+            <div class="d-flex">
+              <div class="unlimited-access-title me-3">
+                <h6 class="fw-semibold fs-4 mb-6 text-dark w-85"></h6>
+                <a href="{% url 'adminlogoutfn' %}" target="_blank" class="btn btn-danger fs-2 fw-semibold lh-sm">Logout</a>
+              </div>
+              <div class="unlimited-access-img">
+                <img src="../assets/images/backgrounds/rocket.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <header class="app-header">
+        <nav class="navbar navbar-expand-lg navbar-light" >
+          <ul class="navbar-nav">
+            <li>
+              <h1 style="padding-left:430px"><b></b></h1>
+
+            </li>
+            <li class="nav-item">
+              <a class="" href="javascript:void(0)">
+                <i class=""></i>
+                <div ></div>
+              </a>
+            </li>
+          </ul>
+          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+<!--              <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a>-->
+
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!--  Header End -->
+      {% block content %}
+      <div class="container-fluid" >
+
+          <div class="col-lg-4">
+            <div class="row">
+                <!-- Yearly Breakup -->
+                <div class="card overflow-hidden bg-primary" style="margin-left:50px">
+                  <div class="card-body p-4">
+                      <div class="col-8">
+                        <a href="{% url 'inventorylistfn' %}">
+                        <h4 class="fw-semibold mb-3">STOCKS</h4>
+                          </a>
+                      </div>
+
+                        </div>
+                      </div>
+              <div class="card overflow-hidden" style="margin-left:50px">
+                  <div class="card-body p-4">
+                      <div class="col-8">
+                        <a href="{% url 'saleslistfn' %}">
+                        <h4 class="fw-semibold mb-3">SALES</h4>
+                          </a>
+                      </div>
+
+                        </div>
+                      </div>
+              <div class="card overflow-hidden bg-primary" style="margin-left:700px;margin-top:-240px;height:100px">
+                  <div class="card-body p-4">
+                      <a href="{% url 'viewsupplierfn' %}">
+                        <h4 class="fw-semibold mb-3">SUPPLIERS</h4>
+                          </a>
+
+                        </div>
+                      </div>
+               <div class="card overflow-hidden " style="margin-left:700px;margin-top:-120px">
+                  <div class="card-body p-4">
+                      <a href="{% url 'purchaselistfn' %}">
+                        <h4 class="fw-semibold mb-3">PURCHASES</h4>
+                          </a>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="card w-100">
+              <div class="card-body p-4">
+                <div class="mb-4">
+                  <h5 class="card-title fw-semibold">Recent Purchases</h5>
+                </div>
+                <table class="table text-nowrap mb-0 align-middle">
+                    <thead class="text-dark fs-4">
+                      <tr>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Supplier Name</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Total price</h6>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in recentpurchases %}
+                      <tr>
+                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{i.suppliername}}</h6></td>
+                        <td class="border-bottom-0">
+                            <h6 class="badge bg-primary rounded-3 fw-semibold">{{i.totalprice}}</h6>
+                        </td>
+
+                      </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8  d-flex align-items-stretch" style="max-height: 360px">
+            <div class="card w-100">
+              <div class="card-body p-3" >
+                <h5 class="card-title fw-semibold mb-4">Recent Transactions</h5>
+                <div class="table-responsive">
+                  <table class="table text-nowrap mb-0 align-middle">
+                    <thead class="text-dark fs-4">
+                      <tr>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Bill No</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Customer Name</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Stock</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Price</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Quantity</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Total Price</h6>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for d in latestsales %}
+                      <tr>
+                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{d.id}}</h6></td>
+                        <td class="border-bottom-0">
+                            <h6 class="badge bg-primary rounded-3 fw-semibold">{{d.cname}}</h6>
+                        </td>
+                        <td class="border-bottom-0">
+                          <p class="mb-0 fw-normal">{{d.stock.stockname}}</p>
+                        </td>
+                        <td class="border-bottom-0">
+                          <div class="d-flex align-items-center gap-2">
+                            <span class="fw-semibold mb-0 fs-4">{{d.stockprice}}</span>
+                          </div>
+                        </td>
+                        <td class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0 fs-4">{{d.stockquantity}}</h6>
+                        </td>
+                        <td class="border-bottom-0">
+                          <h6 class="badge bg-primary rounded-3 fw-semibold">{{d.totalprice}}</h6>
+                        </td>
+                      </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--        -->
+        <div class="py-6 px-6 text-center">
+          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">Alet joseph</a> </p>
+        </div>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+  <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/sidebarmenu.js' %}"></script>
+  <script src="{% static 'js/app.min.js' %}"></script>
+  <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+  <script src="{% static 'libs/simplebar/dist/simplebar.js' %}"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
+  <script src="{% static 'js/totalprice.js' %}"></script>
+<script>
+  $(document).ready(function(){
+     $("#qty").change(function(){
+        x=document.getElementById("qty").value
+        y=document.getElementById("price").value
+        z=x*y
+        document.getElementById("total").value=z
+     })
+
+
+  })
+</script>
+<script>
+
+function populateSupplierDetails() {
+console.log("Function called");
+    var selectElement = document.getElementById("supplierSelect");
+    var selectedOption = selectElement.options[selectElement.selectedIndex];
+    console.log("Selected option:", selectedOption);
+    var phoneNumber = selectedOption.getAttribute("data-phone");
+    var email = selectedOption.getAttribute("data-email");
+
+     console.log("Selected option:", selectedOption);
+    console.log("Phone number:", phoneNumber);
+    console.log("Email:", email);
+
+
+    // Set the values of input fields
+    document.getElementById("phoneNumber").value = phoneNumber;
+    document.getElementById("email").value = email;
+}
+
+
+</script>
+</body>
+
+</html>
